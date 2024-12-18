@@ -18,7 +18,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.font.*
-import androidx.compose.ui.text.drawText
 import com.example.worldclock.ui.theme.WorldClockTheme
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
@@ -27,21 +26,14 @@ import androidx.compose.runtime.*
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.ui.graphics.PaintingStyle
 import androidx.compose.ui.platform.LocalContext
 
 
 
-import androidx.compose.material3.Text
-import androidx.compose.runtime.*
-
-
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.Canvas
@@ -65,6 +57,7 @@ import kotlin.math.PI
 private val timeZones = listOf("America/Los_Angeles", "America/New_York", "Asia/Shanghai", "Europe/London")
 private val timeZoneNames = listOf("Los Angeles", "New York", "Beijing", "London")
 
+//check git push
 
 @Composable
 fun AnalogClock(modifier: Modifier = Modifier, zoneId: ZoneId = ZoneId.systemDefault()) {
@@ -238,7 +231,6 @@ fun TimeZoneDisplay(label: String, zoneId: ZoneId, onZoneChanged: (ZoneId) -> Un
         )
 
         AnalogClock(modifier = Modifier.fillMaxWidth(), zoneId = selectedZone)
-
 
         ShowTime(Modifier.padding(top = 8.dp), selectedZone)
     }
